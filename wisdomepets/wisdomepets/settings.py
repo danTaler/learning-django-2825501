@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import secrets
+import warnings
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,8 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = os.environ.get("SECRET_KEY")
@@ -36,10 +38,6 @@ if not SECRET_KEY and DEBUG:
    
     SECRET_KEY = secrets.token_urlsafe(16)
 
-
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
