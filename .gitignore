@@ -5,3 +5,4 @@ npm-debug.log
 wisdompets/db.sqlite3
 __pycache__/
 *.py[cod]
+requirements.txt
